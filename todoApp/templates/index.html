@@ -14,15 +14,17 @@
 	<div class="row d-flex justify-content-center">	
 		<div class="col-md-5 mt-2">
 			<ul class="list-group">
-			  <li class="list-group-item">Cras justo odio
-				  <div class="float-right">
-				  	<form method="POST" action="delete">
-				  		{% csrf_token %}
-				  		<button type="submit" class="btn btn-danger mb-2">Delete</button>
-				  	</form>
-				  </div>
-			  </li>
-			</ul>
+				{% for i in tasks %}
+				  <li class="list-group-item">{{i.task}}
+					  <div class="float-right">
+					  	<form method="POST" action="delete/{{i.id}}/">
+					  		{% csrf_token %}
+					  		<button type="submit" class="btn btn-danger mb-2">Delete</button>
+					  	</form>
+					  </div>
+				  </li>
+				{% endfor %}
+			</ul>	
 		</div>	
 	</div>	
 	
