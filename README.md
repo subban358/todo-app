@@ -1,4 +1,4 @@
-#To Do application
+# To Do application
 
 A todo app which lets you add new items to todo lis
 
